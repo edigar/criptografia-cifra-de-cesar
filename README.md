@@ -45,9 +45,9 @@ $ ./cifradecesar
 
 Super simples de usar, basta seguir as orientações nas instruções, dentro do próprio prograna, mas consiste de 1 menu com 3 opções: Criptografar, Decriptar e Sair.
 
-Tenha o seu texto em um arquivo do tipo txt (com extensão .txt) no mesmo diretório que o programa. Informe o nome do arquivo, quando solicitado e ele gerará um arquivo, também do tipo txt com o conteúdo.
+Tenha o seu texto em um arquivo do tipo txt (com extensão .txt) no mesmo diretório que o programa. Informe o nome do arquivo, quando solicitado e ele gerará um arquivo, também do tipo txt com o conteúdo encriptado ou decriptado, dependendo da opção.
 
-Não esqueça-se que para decriptar um testo criptografado por essa cifra, deve utilizar a mesma chave, representado por um número.
+Não esqueça-se que para decriptar um texto criptografado por essa cifra, deve utilizar a mesma chave, representado por um número.
 
 ### Telas
 ![Screenshot](images/menu.png "Menu")
