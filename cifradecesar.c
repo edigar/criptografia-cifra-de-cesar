@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <string.h>
+#include <locale.h>
 
 void main() {
     FILE *file_enter;
     FILE *file_cript;
     char file_name[100], name[100], type[20];
     char character, charcript;
-    int option, key;
+    int option, key = 3;
+
+    setlocale(LC_ALL, "Portuguese");
 
     printf("Escolha:\n\n1. Criptografar\n2. Decriptar\n\nOpção: ");
     scanf("%d", &option);
