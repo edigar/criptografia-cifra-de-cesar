@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
+#include <stdlib.h>
+
+void print_header() {
+    printf("\n*****************************************************************************\n*                        CRIPTOGRAFIA CIFRA DE CESAR                        *\n*****************************************************************************\n\n");
+}
 
 void main() {
     FILE *file_enter;
@@ -12,11 +17,14 @@ void main() {
     setlocale(LC_ALL, "Portuguese");
 
     do {
+        system("clear || cls");
+        print_header();
         printf("Escolha:\n\n1. Criptografar\n2. Decriptar\n3. Sair\n\nOpção: ");
         scanf("%d", &option);
 
         if(option == 1 || option == 2) {
-            printf("\n\n\n\n***********************************************\n*         CRIPTOGRAFIA CIFRA DE CESAR         *\n***********************************************\n\n");
+            system("clear || cls");
+            print_header();
             if(option == 1) {
                 strcpy(type, "criptografado");
                 printf("\nInstruções:\n\n* O Arquivo contendo o texto a ser criptografado deve ser um tipo txt. \n* A chave (criptográfica) é um número de X a Y???\n\n");
@@ -57,10 +65,10 @@ void main() {
                 }
             }
         } else if(option == 3) {
-            printf("\n\nTenha um bom dia.\nTchau!\n");
+            printf("\n\nSoftware desenvolvido por Edigar Herculano\nTweetme: twitter.com/edigarp\nRepositório: github.com/edigar/criptografia-cifra-de-cesar\n\nTenha um bom dia. :)\nTchau!\n\n");
         } else {
             printf("\n\nOpção inválida!\n\n");
         }
-
+        system("pause");
     } while(option != 3);
 }
