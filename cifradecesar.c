@@ -12,7 +12,7 @@ void main() {
     FILE *file_cript;
     char file_name[100], name[100], type[20];
     char character, charcript;
-    int option, key = 3;
+    int option, key;
 
     setlocale(LC_ALL, "Portuguese");
 
@@ -27,7 +27,7 @@ void main() {
             print_header();
             if(option == 1) {
                 strcpy(type, "criptografado");
-                printf("\nInstruções:\n\n* O Arquivo contendo o texto a ser criptografado deve ser um tipo txt. \n* A chave (criptográfica) é um número de X a Y???\n\n");
+                printf("\nInstruções:\n\n* O Arquivo contendo o texto a ser criptografado deve ser um tipo txt. \n* A chave (criptográfica) é um número de 1 a 999\n\n");
             } else if(option== 2) {
                 strcpy(type, "decriptado");
                 printf("\nInstruções:\n\n* O Arquivo contendo o texto a ser decriptado deve ser um tipo txt. \n* A chave (criptográfica) deve ser a mesma que foi utilizada para criptografar\n\n");
