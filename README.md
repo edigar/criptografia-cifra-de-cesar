@@ -1,6 +1,10 @@
 # criptografia-cifra-de-cesar
 Um programa em C, que encripta e decripta textos no formato txt, baseado no método de criptografia da cifra de césar.
 
+## A Cifra de César
+
+A [Cifra de César](https://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar) é uma das técnicas de criptografia mais simples e conhecidas. É um tipo de cifra de substituição, que opera de acordo com um sitema pré-definido de substituição, em que cada letra do texto é substituída por uma letra ou um símbolo diretamente. O nome do método existe em homenagem à Julio César, que usou em sua correpondência privada.
+
 ## Instalação
 Para instalar, basta clonar o repositório, compilar o fonte e rodar.
 
