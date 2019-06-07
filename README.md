@@ -17,7 +17,7 @@ $ cd criptografia-cifra-de-cesar
 Para compilar e rodar no Windows, basta você utilizar o compilador de sua preferência para compilar o fonte em cifradecesar.c ou se preferir, pode utilizar um editor de código que tenha a função compilar.
 Duas sugestões são o [DevC++](https://www.bloodshed.net/dev/devcpp.html "Download DevC++") ou o [CodeBlocks](http://www.codeblocks.org/ "CodeBlocks"), assim abra o fonte no seu editor preferido e compile.
 
-Uma vez tendo compilado o fonte, basta executar o aqruivo exe gerado.
+Uma vez tendo compilado o fonte, basta executar o arquivo exe gerado.
 
 ### Linux
 Para compilar no linux, você precisará ter o compilador instalado. Se não tiver, uma opção é o gcc. Para instalá-lo e compilar o fonte, faça como abaixo:
