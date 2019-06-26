@@ -7,6 +7,17 @@ void print_header() {
     printf("\n*****************************************************************************\n*                        CRIPTOGRAFIA CIFRA DE CESAR                        *\n*****************************************************************************\n\n");
 }
 
+void clear_keyboard_buffer() {
+    int character = 0;
+    while ((character = getchar()) != '\n' && character != EOF) {}
+    return;
+}
+
+void pause() {
+    printf("\n\n\nPressione qualquer tecla para continuar...");
+    getchar();
+}
+
 void main() {
     FILE *file_enter;
     FILE *file_cript;
@@ -40,7 +51,7 @@ void main() {
 
             file_enter = fopen(file_name, "r");
             if(file_enter == NULL) {
-                printf("Falha ao abrir arquivo a ser %s (%s)\n\n\n", type, file_name);
+                printf("Falha ao abrir arquivo a ser %s (%s)", type, file_name);
             } else {
                 strcpy(file_name, name);
                 strcat(file_name, "_");
@@ -48,7 +59,7 @@ void main() {
                 strcat(file_name, ".txt");
                 file_cript = fopen(file_name, "w");
                 if(file_cript == NULL) {
-                    printf("Falha ao abrir arquivo de destino\n\n\n");
+                    printf("Falha ao abrir arquivo de destino");
                 } else {
                     printf("Chave: ");
                     scanf("%d", &key);
@@ -58,17 +69,20 @@ void main() {
                         fputc(charcript, file_cript);
                     }
 
-                    printf("\nArquivo %s em %s\n\n\n", type, file_name);
+                    printf("\nArquivo %s em %s", type, file_name);
 
                     fclose(file_enter);
                     fclose(file_cript);
                 }
             }
         } else if(option == 3) {
-            printf("\n\nSoftware desenvolvido por Edigar Herculano\nTweetme: twitter.com/edigarp\nRepositório: github.com/edigar/criptografia-cifra-de-cesar\n\nTenha um bom dia. :)\nTchau!\n\n");
+            printf("\n\nSoftware desenvolvido por Edigar Herculano\nTweetme: twitter.com/edigarp\nRepositório: github.com/edigar/criptografia-cifra-de-cesar\n\nTenha um bom dia. :)\nTchau!");
         } else {
-            printf("\n\nOpção inválida!\n\n");
+            printf("\n\nOpção inválida!");
         }
-        system("pause");
+
+        clear_keyboard_buffer();
+        pause();
+
     } while(option != 3);
 }
