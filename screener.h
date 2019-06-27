@@ -15,6 +15,7 @@ void clear_screen() {
 }
 
 void pause() {
+    clear_keyboard_buffer();
     printf("\n\n\nPressione qualquer tecla para continuar...");
     getchar();
 }

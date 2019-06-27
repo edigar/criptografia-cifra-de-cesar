@@ -66,7 +66,6 @@ void main() {
             printf("\n\nOpção inválida!");
         }
 
-        clear_keyboard_buffer();
         pause();
 
     } while(option != 3);
