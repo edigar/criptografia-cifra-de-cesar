@@ -1,22 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
-#include <stdlib.h>
-
-void print_header() {
-    printf("\n*****************************************************************************\n*                        CRIPTOGRAFIA CIFRA DE CESAR                        *\n*****************************************************************************\n\n");
-}
-
-void clear_keyboard_buffer() {
-    int character = 0;
-    while ((character = getchar()) != '\n' && character != EOF) {}
-    return;
-}
-
-void pause() {
-    printf("\n\n\nPressione qualquer tecla para continuar...");
-    getchar();
-}
+#include "screener.h"
 
 void main() {
     FILE *file_enter;
@@ -28,13 +13,13 @@ void main() {
     setlocale(LC_ALL, "Portuguese");
 
     do {
-        system("clear || cls");
+        clear_screen();
         print_header();
         printf("Escolha:\n\n1. Criptografar\n2. Decriptar\n3. Sair\n\nOpção: ");
         scanf("%d", &option);
 
         if(option == 1 || option == 2) {
-            system("clear || cls");
+            clear_screen();
             print_header();
             if(option == 1) {
                 strcpy(type, "criptografado");
