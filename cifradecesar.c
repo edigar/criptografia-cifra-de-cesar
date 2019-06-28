@@ -13,13 +13,11 @@ void main() {
     setlocale(LC_ALL, "Portuguese");
 
     do {
-        clear_screen();
         print_header();
         printf("Escolha:\n\n1. Criptografar\n2. Decriptar\n3. Sair\n\nOpção: ");
         scanf("%d", &option);
 
         if(option == 1 || option == 2) {
-            clear_screen();
             print_header();
             if(option == 1) {
                 strcpy(type, "criptografado");
