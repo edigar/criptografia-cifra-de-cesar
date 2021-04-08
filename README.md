@@ -52,10 +52,3 @@ Super simples de usar, basta seguir as orientações nas instruções, dentro do
 Tenha o seu texto em um arquivo do tipo txt (com extensão .txt) no mesmo diretório que o programa ou acrescente o caminho (path) para o arquivo ao informar o nome. Informe o nome do arquivo (com o caminho, caso esteja em outro diretório) **sem a extensão**, quando solicitado e ele gerará um arquivo, também do tipo txt com o conteúdo encriptado ou decriptado, dependendo da opção.
 
 Não esqueça-se que para decriptar um texto criptografado por essa cifra, deve utilizar a mesma chave, representado por um número.
-
-### Telas
-![Screenshot](images/menu.png "Menu")
-
-![Screenshot](images/criptografar.png "Criptografar")
-
-![Screenshot](images/decriptar.png "Decriptar")
