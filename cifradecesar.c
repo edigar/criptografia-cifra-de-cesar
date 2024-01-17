@@ -1,70 +1,62 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
-#include "screener.h"
+#include "presenter/cli.h"
+#include "file/handle_file.h"
+#include "file/crypt_file.h"
 
 void main() {
-    FILE *file_enter;
-    FILE *file_cript;
-    char file_name[100], name[100], type[20];
-    char character, charcript;
+    File enterFile;
+    File cryptFile;
+    char name[100], type[15];
     int option, key;
 
     setlocale(LC_ALL, "Portuguese");
 
     do {
-        print_header();
-        printf("Escolha:\n\n1. Criptografar\n2. Decriptar\n3. Sair\n\nOpção: ");
-        scanf("%d", &option);
+        option = menu();
 
-        if(option == 1 || option == 2) {
-            print_header();
-            if(option == 1) {
+        switch(option) {
+            case 1:
                 strcpy(type, "criptografado");
-                printf("\nInstruções:\n\n* O Arquivo contendo o texto a ser criptografado deve ser um tipo txt. \n* A chave (criptográfica) é um número de 1 a 999\n\n");
-            } else if(option== 2) {
+                instructions(type);
+                getFileName(name, type);
+                getKey(&key);
+
+                enterFile = openTxtFile(name);
+                cryptFile = createFile(name, type);
+                encryptFile(enterFile.address, cryptFile.address, key);
+
+                printf("\nArquivo %s em %s", type, cryptFile.name);
+
+                fclose(enterFile.address);
+                fclose(cryptFile.address);
+                break;
+            case 2:
                 strcpy(type, "decriptado");
-                printf("\nInstruções:\n\n* O Arquivo contendo o texto a ser decriptado deve ser um tipo txt. \n* A chave (criptográfica) deve ser a mesma que foi utilizada para criptografar\n\n");
-            }
+                instructions(type);
+                getFileName(name, type);
+                getKey(&key);
 
-            printf("Nome do arquivo (txt) a ser %s: ", type);
-            scanf("%s", name);
-            strcpy(file_name, name);
-            strcat(file_name, ".txt");
+                enterFile = openTxtFile(name);
+                cryptFile = createFile(name, type);
+                decryptFile(enterFile.address, cryptFile.address, key);
 
-            file_enter = fopen(file_name, "r");
-            if(file_enter == NULL) {
-                printf("Falha ao abrir arquivo a ser %s (%s)", type, file_name);
-            } else {
-                strcpy(file_name, name);
-                strcat(file_name, "_");
-                strcat(file_name, type);
-                strcat(file_name, ".txt");
-                file_cript = fopen(file_name, "w");
-                if(file_cript == NULL) {
-                    printf("Falha ao abrir arquivo de destino");
-                } else {
-                    printf("Chave: ");
-                    scanf("%d", &key);
-                    key = option == 2 ? key * -1 : key;
-                    while((character = fgetc(file_enter)) != EOF) {
-                        charcript = character + key;
-                        fputc(charcript, file_cript);
-                    }
+                printf("\nArquivo %s em %s", type, cryptFile.name);
 
-                    printf("\nArquivo %s em %s", type, file_name);
-
-                    fclose(file_enter);
-                    fclose(file_cript);
-                }
-            }
-        } else if(option == 3) {
-            printf("\n\nSoftware desenvolvido por Edigar Herculano\nTweetme: twitter.com/edigarp\nRepositório: github.com/edigar/criptografia-cifra-de-cesar\n\nTenha um bom dia. :)\nTchau!");
-        } else {
-            printf("\n\nOpção inválida!");
+                fclose(enterFile.address);
+                fclose(cryptFile.address);
+                break;
+            case 3:
+                wprintf(L"\n\nSoftware desenvolvido por Edigar Herculano\nTweetme: twitter.com/edigarp\nRepositório: github.com/edigar/criptografia-cifra-de-cesar\n\nTenha um bom dia. :)\nTchau!");
+                break;
+            default:
+                wprintf(L"\n\nOpção inválida!");
         }
 
         pause();
 
     } while(option != 3);
+
+    exit(EXIT_SUCCESS);
 }
