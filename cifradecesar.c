@@ -48,7 +48,7 @@ void main() {
                 fclose(cryptFile.address);
                 break;
             case 3:
-                wprintf(L"\n\nSoftware desenvolvido por Edigar Herculano\nTweetme: twitter.com/edigarp\nRepositório: github.com/edigar/criptografia-cifra-de-cesar\n\nTenha um bom dia. :)\nTchau!");
+                wprintf(L"\n\nSoftware desenvolvido por Edigar Herculano\nTweetme: twitter.com/edigarp\nGitHub: github.com/edigar/criptografia-cifra-de-cesar\n\nTenha um bom dia. :)\nTchau!");
                 break;
             default:
                 wprintf(L"\n\nOpção inválida!");
